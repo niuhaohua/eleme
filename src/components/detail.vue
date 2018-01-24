@@ -162,7 +162,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .hello{
   padding-top: 53px;
   height: 100%;
@@ -280,5 +280,9 @@ export default {
 }
 #loding{
   height: 80px
+}
+.el-rate__icon{
+  font-size: 10px;
+  margin-right: 2px;
 }
 </style>
