@@ -42,7 +42,6 @@
     watch: {
       adress: function (newadress) {
         if (!/(^\s+)|(\s+$)/g.test(newadress) && newadress.length > 0) {
-          console.log(newadress)
           this.getAdress(newadress)
         }
       }

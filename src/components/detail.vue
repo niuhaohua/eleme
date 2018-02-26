@@ -162,7 +162,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .hello{
   padding-top: 53px;
   height: 100%;
@@ -213,17 +213,17 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.item-2 {
+#scroll .item-2 {
   padding-top: 10px;
   font-size: 10px;
   color:#6F6F6F;
 }
-.item-2 .rating{
+#scroll .item-2 .rating{
   color:#FFC000;
   margin-right: 2%;
   display: inline-block;
 }
-.item-2 .text{
+#scroll .item-2 .text{
   display: inline-block;
   float: right;
   padding-top: 2px;
@@ -235,42 +235,42 @@ export default {
   color:#FFF;
   vertical-align: middle;
 }
-.item-3 {
+#scroll .item-3 {
   padding-top: 10px;
   font-size: 10px;
   color:#6F6F6F;
 }
-.item-3-left{
+#scroll .item-3-left{
   display: inline-block;
-  width: 48%;
+  width: 54%;
 }
-.item-3-right{
+#scroll .item-3-right{
   display: inline-block;
-  width: 48%;
+  width: 42%;
   text-align: right;
 }
-.item-4 {
+#scroll .item-4 {
   padding-top: 10px;
   font-size: 8px;
   color:#E8470B
 }
-.item-4 img {
+#scroll .item-4 img {
   width: 4.5%;
   vertical-align: text-top;
 }
 
-.res_img{
+#scroll .res_img{
   /* float: left; */
   width:100%;
   height: 100%;
   display: block;
 }
-.left{
+#scroll .left{
   display: inline-block;
   width: 20%;
   border:1px solid #DFDFDF;
 }
-.right{
+#scroll .right{
   padding-left:10px;
   box-sizing: border-box;
   display: inline-block;
@@ -278,11 +278,21 @@ export default {
   overflow-wrap: hidden;
   vertical-align: top;
 }
-#loding{
+#scroll #loding{
   height: 80px
 }
-.el-rate__icon{
+
+</style>
+
+<style>
+#scroll .rating .el-rate__icon{
   font-size: 10px;
   margin-right: 2px;
+}
+#scroll .rating .el-rate__text{
+  font-size: 11px
+}
+#scroll .rating .el-rate{
+  height: 10px;
 }
 </style>
