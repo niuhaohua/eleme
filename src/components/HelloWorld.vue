@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div class="head">选择收货地址111</div>
+    <div class="head">选择收货地址</div>
     <div class="choose_adress">
       <el-input v-model="adress" placeholder="请输入内容"></el-input>
     </div>
