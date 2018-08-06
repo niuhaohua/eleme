@@ -23,26 +23,26 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   components: {
     axios
   },
   data() {
     return {
-      adress: "",
+      adress: '',
       adressList: [],
       longitude: null,
       latitude: null,
-      position: "123",
+      position: '123',
       listFlag: false
-    };
+    }
   },
   watch: {
-    adress: function(newadress) {
-      if (!/(^\s+)|(\s+$)/g.test(newadress) && newadress.length > 0) {
-        this.getAdress(newadress);
+    adress: function (newadress) {
+      if (!/(^\s+)|(\s+$)/g.test (newadress) && newadress.length > 0) {
+        this.getAdress(newadress)
       }
     }
   },
@@ -50,8 +50,8 @@ export default {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function(position) {
-          this.longitude = position.coords.longitude;
-          this.latitude = position.coords.latitude;
+          this.longitude = position.coords.longitude
+          this.latitude = position.coords.latitude
           // alert(this.longitude, this.latitude)
         },
         function(e) {
@@ -59,15 +59,15 @@ export default {
           // var dd = e.message
           // alert('错误：' + msg + ',' + dd)
         }
-      );
+      )
     }
   },
   mounted() {},
   methods: {
     getAdress: function(newadress) {
       axios({
-        method: "GET",
-        url: "http://47.95.235.136:80/start"
+        // method: 'GET',
+        url: 'http://47.95.235.136:80/start'
       })
         .then(function(res) {
           console.log(res)
@@ -77,31 +77,27 @@ export default {
           if (err) {
             window.alert("api error, HTTP CODE: " + res.status);
           }
-        });
-
-      this.$api.get("", function(data) {
-        console.log(data);
-      });
+        })
       var message = {
         keyword: newadress,
         offset: 0,
         limit: 20,
         longitude: this.longitude,
         latitude: this.latitude
-      };
-      var vm = this;
-      this.$api.get("search_poi_nearby", message, function(data) {
+      }
+      var vm = this
+      this.$api.get('search_poi_nearby', message, function(data) {
         if (message.keyword) {
           if (data.length === 0) {
-            vm.listFlag = true;
+            vm.listFlag = true
           } else {
-            vm.listFlag = false;
+            vm.listFlag = false
           }
-          vm.adressList = data;
+          vm.adressList = data
         } else {
-          vm.adressList = [];
+          vm.adressList = []
         }
-      });
+      })
     }
   }
 };
