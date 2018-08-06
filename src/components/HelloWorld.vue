@@ -66,6 +66,9 @@
     },
     methods: {
       getAdress: function (newadress) {
+        this.$api.get('http://47.95.235.136:80/start', function (data) {
+          console.log(data)
+        })
         var message = {
           keyword: newadress,
           offset: 0,
