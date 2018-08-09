@@ -39,6 +39,10 @@ module.exports = {
       '/restapi/shopping/**': {
         target: 'https://h5.ele.me', // 你接口的域名
         changeOrigin: true,
+      },
+      '/start': {
+        target: 'http://47.95.235.136:8080', // 你接口的域名
+        changeOrigin: true,
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"

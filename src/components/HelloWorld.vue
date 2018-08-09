@@ -66,8 +66,8 @@ export default {
   methods: {
     getAdress: function(newadress) {
       axios({
-        // method: 'GET',
-        url: 'http://47.95.235.136:80/start'
+        method: 'GET',
+        url: '/start'
       })
         .then(function(res) {
           console.log(res)
